@@ -6,26 +6,66 @@ using System.Text;
 
 namespace Uppgift4
 {
-    internal class CoffeeMachine(string Brand,int CupsPerBrew)
+    internal class CoffeeMachine : Appliance
     {
-        public string? Brand { get; set; }
-        public int CupsPerBrew { get; set; }
+        private double energyPerHour;
+        private int CupsPerBrew;
 
-        string _brand = Brand;
-        int _cupsPerBrew = CupsPerBrew;
+        public CoffeeMachine(string brand, string room, double energyPerHour, int CupsPerBrew)
+            : base(brand, room)
+        {
+            this.energyPerHour = energyPerHour;
+            this.CupsPerBrew = CupsPerBrew;
+        }
 
-        public void StartBrewing()
+        public override string GetInfo()
         {
-            Console.WriteLine($"{_brand} brewer starts brewing.");
+            return $"CoffeeMachine: {Brand} in {Room}";
         }
-        public void StopBrewing()
+
+        public override void TurnOn()
         {
-            Console.WriteLine($"{_brand} brewer stops brewing.");
+            base.TurnOn();
+            Console.WriteLine($"{Brand} coffeemachine starts a brewing coffee.");
         }
+
+        public override void TurnOff()
+        {
+            base.TurnOff();
+            Console.WriteLine($"Coffeemachine ,{Brand}, has finished and is now off.");
+        }
+
+        public override double GetDailyEnergyUsage()
+        {
+            if (IsOn)
+            {
+                return energyPerHour ; 
+            }
+
+            return 0;
+        }
+    
+
+    //internal class CoffeeMachine(string Brand,int CupsPerBrew)
+    //{
+    //    public string? Brand { get; set; }
+    //    public int CupsPerBrew { get; set; }
+
+    //    string _brand = Brand;
+    //    int _cupsPerBrew = CupsPerBrew;
+
+    //    public void StartBrewing()
+    //    {
+    //        Console.WriteLine($"{_brand} brewer starts brewing.");
+    //    }
+    //    public void StopBrewing()
+    //    {
+    //        Console.WriteLine($"{_brand} brewer stops brewing.");
+    //    }
         public void PrintBrewingEnergy()
         {
-            Console.WriteLine($"{_brand} brewer uses 0.3 kWh per brew.");
+            Console.WriteLine($"{Brand} brewer uses 0.3 kWh per brew.");
         }
 
+        }
     }
-}

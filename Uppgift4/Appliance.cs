@@ -27,7 +27,7 @@ namespace Uppgift4
             // Returnera en generell text om apparaten. 
             // Exempel: "LG in Laundry room"
             return $"{Brand} in {Room} room.";
-            throw new NotImplementedException(); 
+           
         }
             public virtual void TurnOn() 
         {
@@ -36,7 +36,7 @@ namespace Uppgift4
             // Skriv ut ett generellt startmeddelande.
             IsOn = true;
             Console.WriteLine($"{Brand} is now turned on.");
-            throw new NotImplementedException(); 
+           
         } 
         public virtual void TurnOff() {
             // 
@@ -44,12 +44,13 @@ namespace Uppgift4
             // Skriv ut ett generellt stoppmeddelande.
             IsOn = false;
             Console.WriteLine($"{Brand} is now turned off.");
-            throw new NotImplementedException(); } 
+            
+        } 
         public virtual double GetDailyEnergyUsage() {
             // 
             // Returnera 0 som standardvärde.
             return 0;
-            throw new NotImplementedException();
+           
             //
             //
         }

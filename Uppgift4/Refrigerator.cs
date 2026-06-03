@@ -4,23 +4,62 @@ using System.Text;
 
 namespace Uppgift4
 {
-    internal class Refrigerator(string Brand,int Temperature)
+    internal class Refrigerator : Appliance
     {
-        public string? Brand { get; set; }
-        public int Temperature { get; set; }
-        string _brand = Brand;
-        int _temperature = Temperature;
-        public void StartCooling()
+        private double energyPerHour;
+        private int Temperature;
+
+        public Refrigerator(string brand, string room, double energyPerHour, int Temperature)
+            : base(brand, room)
         {
-            Console.WriteLine($"{_brand} refrigerator starts cooling.");
+            this.energyPerHour = energyPerHour;
+            this.Temperature = Temperature;
         }
-        public void StopCooling() 
+
+        public override string GetInfo()
         {
-            Console.WriteLine($"{_brand} refrigerator stops cooling.");
+            return $"Refrigerator: {Brand} in {Room}";
         }
+
+        public override void TurnOn()
+        {
+            base.TurnOn();
+            Console.WriteLine($"{Brand} Refrigerator starts cooling.");
+        }
+
+        public override void TurnOff()
+        {
+            base.TurnOff();
+            Console.WriteLine($"Refrigerator ,{Brand}, has finished and is now off.");
+        }
+
+        public override double GetDailyEnergyUsage()
+        {
+            if (IsOn)
+            {
+                return energyPerHour ; 
+            }
+
+            return 0;
+        }
+    
+    //internal class Refrigerator(string Brand,int Temperature)
+    //{
+    //    public string? Brand { get; set; }
+    //    public int Temperature { get; set; }
+    //    string _brand = Brand;
+    //    int _temperature = Temperature;
+    //    public void StartCooling()
+    //    {
+    //        Console.WriteLine($"{_brand} refrigerator starts cooling.");
+    //    }
+    //    public void StopCooling() 
+    //    {
+    //        Console.WriteLine($"{_brand} refrigerator stops cooling.");
+    //    }
         public void PrintCoolingEnergy()
         {
-            Console.WriteLine($"{_brand} refrigerator uses 3.6 kWh per day.");
+            Console.WriteLine($"{Brand} refrigerator uses 3.6 kWh per day.");
         }
     }
 

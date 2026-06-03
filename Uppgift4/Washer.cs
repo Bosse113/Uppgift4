@@ -4,24 +4,63 @@ using System.Text;
 
 namespace Uppgift4
 {
-    internal class Washer(string Brand,int CapacityKg)
+    internal class Washer : Appliance
     {
-        public string? Brand { get; set; }
-        public int CapacityKg { get; set; }
-        string _brand=Brand;
-        int _capacityKg=CapacityKg;
+        private double energyPerHour;
+        private int CapacityKg;
 
-        public void StartWash()
+        public Washer(string brand, string room, double energyPerHour,int CapacityKg)
+            : base(brand, room)
         {
-            Console.WriteLine($"{_brand} washer starts washing.");
+            this.energyPerHour = energyPerHour;
+            this.CapacityKg = CapacityKg;
         }
-        public void StopWash() 
-        { 
-            Console.WriteLine($"{_brand} washer stops washing.");
+
+        public override string GetInfo()
+        {
+            return $"Washing machine: {Brand} in {Room}";
         }
+
+        public override void TurnOn()
+        {
+            base.TurnOn();
+            Console.WriteLine($"{Brand} washer starts a washing program..");
+        }
+
+        public override void TurnOff()
+        {
+            base.TurnOff();
+            Console.WriteLine($"Washing machine ,{Brand}, has finished and is now off.");
+        }
+
+        public override double GetDailyEnergyUsage()
+        {
+            if (IsOn)
+            {
+                return energyPerHour ; 
+            }
+
+            return 0;
+        }
+    
+    //internal class Washer(string Brand,int CapacityKg)
+    //{
+    //    public string? Brand { get; set; }
+    //    public int CapacityKg { get; set; }
+    //    string _brand=Brand;
+    //    int _capacityKg=CapacityKg;
+
+    //    public void StartWash()
+    //    {
+    //        Console.WriteLine($"{_brand} washer starts washing.");
+    //    }
+    //    public void StopWash() 
+    //    { 
+    //        Console.WriteLine($"{_brand} washer stops washing.");
+    //    }
         public void PrintWashEnergy()
         {
-            Console.WriteLine($"{_brand} washer uses 1.2 kWh per wash.");
+            Console.WriteLine($"{Brand} washer uses 1.2 kWh per wash.");
         }
     }
 }

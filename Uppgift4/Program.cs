@@ -9,15 +9,15 @@ namespace Uppgift4
         static void Main(string[] args)
         {
             List<object> devices = new List<object>(); 
-            Washer washer = new Washer("Siemens", 10);
+            Washer washer = new Washer("Siemens","kitchen,",1.2, 10);
             devices.Add(washer);
-            Refrigerator refrigerator = new Refrigerator("Elecrolux", 35);
+            Refrigerator refrigerator = new Refrigerator("Elecrolux","kitchen",3.6, 35);
             devices.Add(refrigerator);
-            Oven oven = new Oven("Bosch", 200);
+            Oven oven = new Oven("Bosch","kitchen",2.5 , 200);
             devices.Add(oven);
-            RobotVacuum robot = new RobotVacuum("Philips", 14);
+            RobotVacuum robot = new RobotVacuum("Philips","livingroom" , 0.4, 14);
             devices.Add(robot);
-            CoffeeMachine coffeeMachine = new CoffeeMachine("MoccaMaster", 10);
+            CoffeeMachine coffeeMachine = new CoffeeMachine("MoccaMaster","kitchen" ,0.3,10);
             devices.Add(coffeeMachine);
 
             // 
@@ -35,28 +35,28 @@ namespace Uppgift4
                     if (device is Washer washer)
                     { // 
                       // Casta device till Washer // Anropa Washer-metoder }
-                        washer.StartWash();
-                        washer.StopWash();
+                        washer.TurnOn();
+                        washer.TurnOff();
                     }
                     if (device is Refrigerator refrigerator)
                     { 
-                       refrigerator.StartCooling();
-                       refrigerator.StopCooling();
+                       refrigerator.TurnOn();
+                       refrigerator.TurnOff();
                     }
                     if (device is Oven oven)
                     { 
-                        oven.StartHeating();
-                        oven.StopHeating();
+                        oven.TurnOn();
+                        oven.TurnOff();
                     }
                     if (device is RobotVacuum robotVacuum)
                     { 
-                        robotVacuum.StartCleaning();
-                        robotVacuum.StopCleaning();
+                        robotVacuum.TurnOn();
+                        robotVacuum.TurnOff();
                     }
                     if (device is CoffeeMachine coffeeMachine)
                     {
-                        coffeeMachine.StartBrewing();
-                        coffeeMachine.StopBrewing();
+                        coffeeMachine.TurnOn();
+                        coffeeMachine.TurnOff();
                     }
                     // 
                     // 1. Kontrollera vilken typ device är. 
