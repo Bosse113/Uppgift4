@@ -6,7 +6,7 @@ namespace Uppgift4
 {
     internal class Oven(string Brand, int MaxTemperature)
     {
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
         public int MaxTemperature { get; set; }
         string _brand=Brand;
         int _maxTemperature=MaxTemperature;

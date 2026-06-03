@@ -6,7 +6,7 @@ namespace Uppgift4
 {
     internal class Washer(string Brand,int CapacityKg)
     {
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
         public int CapacityKg { get; set; }
         string _brand=Brand;
         int _capacityKg=CapacityKg;

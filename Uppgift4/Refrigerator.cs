@@ -6,7 +6,7 @@ namespace Uppgift4
 {
     internal class Refrigerator(string Brand,int Temperature)
     {
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
         public int Temperature { get; set; }
         string _brand = Brand;
         int _temperature = Temperature;

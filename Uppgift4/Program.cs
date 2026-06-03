@@ -11,12 +11,14 @@ namespace Uppgift4
             List<object> devices = new List<object>(); 
             Washer washer = new Washer("Siemens", 10);
             devices.Add(washer);
-            Refrigerator fridge = new Refrigerator("Elecrolux", 35);
-            devices.Add(fridge);
+            Refrigerator refrigerator = new Refrigerator("Elecrolux", 35);
+            devices.Add(refrigerator);
             Oven oven = new Oven("Bosch", 200);
             devices.Add(oven);
             RobotVacuum robot = new RobotVacuum("Philips", 14);
             devices.Add(robot);
+            CoffeeMachine coffeeMachine = new CoffeeMachine("MoccaMaster", 10);
+            devices.Add(coffeeMachine);
 
             // 
             // Skapa minst fyra objekt: 
@@ -50,6 +52,11 @@ namespace Uppgift4
                     { 
                         robotVacuum.StartCleaning();
                         robotVacuum.StopCleaning();
+                    }
+                    if (device is CoffeeMachine coffeeMachine)
+                    {
+                        coffeeMachine.StartBrewing();
+                        coffeeMachine.StopBrewing();
                     }
                     // 
                     // 1. Kontrollera vilken typ device är. 
@@ -86,11 +93,19 @@ namespace Uppgift4
                         robotVacuum.PrintCleaningEnergy();
 
                     }
+                    if (device is CoffeeMachine coffeeMachine)
+                    {
+                       coffeeMachine.PrintBrewingEnergy();
+
+                    }
                 }
                 // TODO: 
                 // 1. Kontrollera vilken typ device är. 
                 // 2. Casta till rätt typ. 
-                // 3. Anropa rätt energimetod. }
+                // 3. Anropa rätt energimetod.
+                // 
+                //*************Frågor*****************
+
                 //1.Varför behövde du kontrollera vilken typ varje objekt hade?
                 //    För att veta vilken metod som ska anropas
                 //2.Vad händer om du lägger till en ny klass CoffeeMachine ?
@@ -101,6 +116,8 @@ namespace Uppgift4
                 //   Programmet vet inte om object är Oven,RobotVacuum m.m.
                 //5.Vad händer om du råkar glömma en apparattyp i ReportAllEnergy()?
                 //   DÅ får vi ingen rapport på den apparattypen.
+
+                // När jag lade till CoffeeMachine behövde jag ändra på 3 ställen plus den nya klassen
             }
         }
     }

@@ -6,7 +6,7 @@ namespace Uppgift4
 {
     internal class RobotVacuum(string Brand,int BatteryLevel)
     {
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
         public int BatteryLevel { get; set; }
         string _brand=Brand;
         int _batteryLevel = BatteryLevel;
