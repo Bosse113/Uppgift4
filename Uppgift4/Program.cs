@@ -6,7 +6,7 @@ namespace Uppgift4
     {
         static void Main(string[] args)
         {
-            List<object> devices = new List<object>();
+            List<object> devices = new List<object>(); 
             Washer washer = new Washer("Siemens", 10);
             devices.Add(washer);
             Refrigerator fridge = new Refrigerator("Elecrolux", 35);
