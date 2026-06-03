@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Exercise_4
+namespace Uppgift4
 {
     internal class Oven(string Brand, int MaxTemperature)
     {

@@ -1,4 +1,4 @@
-﻿using Exercise_4;
+﻿
 
 namespace Uppgift4
 {
@@ -28,41 +28,47 @@ namespace Uppgift4
             {
                 foreach (object device in devices)
                 {
-                    if (device is Washer)
-                    { // TODO: // Casta device till Washer // Anropa Washer-metoder }
-
+                    if (device is Washer washer)
+                    { // 
+                      // Casta device till Washer // Anropa Washer-metoder }
+                        washer.StartWash();
+                        washer.StopWash();
                     }
-                    if (device is Refrigerator)
-                    { // TODO: 
-
+                    if (device is Refrigerator refrigerator)
+                    { 
+                       refrigerator.StartCooling();
+                       refrigerator.StopCooling();
                     }
-                    if (device is Oven)
-                    { // TODO: 
-
+                    if (device is Oven oven)
+                    { 
+                        oven.StartHeating();
+                        oven.StopHeating();
                     }
-                    if (device is RobotVacuum)
-                    { // TODO: 
-
+                    if (device is RobotVacuum robotVacuum)
+                    { 
+                        robotVacuum.StartCleaning();
+                        robotVacuum.StopCleaning();
                     }
-                    // TODO: 
+                    // 
                     // 1. Kontrollera vilken typ device är. 
                     // 2. Casta till rätt typ. 
                     // 3. Anropa rätt startmetod. 
                     // 4. Anropa rätt stoppmetod. }
                     //
                 }
-                static void ReportAllEnergy(List<object> devices)
+                
+
+            }
+            static void ReportAllEnergy(List<object> devices)
+            {
+                foreach (object device in devices)
                 {
-                    foreach (object device in devices)
-                    {
 
-                    }
-                    // TODO: 
-                    // 1. Kontrollera vilken typ device är. 
-                    // 2. Casta till rätt typ. 
-                    // 3. Anropa rätt energimetod. }
                 }
-
+                // TODO: 
+                // 1. Kontrollera vilken typ device är. 
+                // 2. Casta till rätt typ. 
+                // 3. Anropa rätt energimetod. }
             }
         }
     }
