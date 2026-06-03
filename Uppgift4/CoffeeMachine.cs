@@ -64,7 +64,7 @@ namespace Uppgift4
     //    }
         public void PrintBrewingEnergy()
         {
-            Console.WriteLine($"{Brand} brewer uses 0.3 kWh per brew.");
+            Console.WriteLine($"{Brand} brewer uses {energyPerHour} kWh per brew.");
         }
 
         }

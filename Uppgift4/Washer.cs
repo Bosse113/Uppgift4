@@ -60,7 +60,7 @@ namespace Uppgift4
     //    }
         public void PrintWashEnergy()
         {
-            Console.WriteLine($"{Brand} washer uses 1.2 kWh per wash.");
+            Console.WriteLine($"{Brand} washer uses {energyPerHour} kWh per wash.");
         }
     }
 }

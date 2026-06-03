@@ -61,7 +61,7 @@ namespace Uppgift4
         //    }
         public void PrintCleaningEnergy()
         {
-            Console.WriteLine($"{Brand} robot vacuum uses 0.4 kWh per cleaning. ");
+            Console.WriteLine($"{Brand} robot vacuum uses {energyPerHour} kWh per cleaning. ");
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Uppgift4
     //    }
         public void PrintCoolingEnergy()
         {
-            Console.WriteLine($"{Brand} refrigerator uses 3.6 kWh per day.");
+            Console.WriteLine($"{Brand} refrigerator uses {energyPerHour} kWh per day.");
         }
     }
 

@@ -60,7 +60,7 @@ namespace Uppgift4
     //    }
         public void PrintHeatingEnergy()
         {//ToDo
-            Console.WriteLine($"{Brand} oven uses 2.5 kWh per hour.");
+            Console.WriteLine($"{Brand} oven uses {energyPerHour} kWh per hour.");
         }
     }
 }
