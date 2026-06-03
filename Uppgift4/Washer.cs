@@ -8,17 +8,20 @@ namespace Exercise_4
     {
         public string Brand { get; set; }
         public int CapacityKg { get; set; }
-        public void StartWash()
-        {//ToDo
+        string _brand=Brand;
+        int _capacityKg=CapacityKg;
 
+        public void StartWash()
+        {
+            Console.WriteLine($"{_brand} washer starts washing.");
         }
         public void StopWash() 
-        { //ToDo
-        
+        { 
+            Console.WriteLine($"{_brand} washer stops washing.");
         }
         public void PrintWashEnergy()
-        {//ToDo
-
+        {
+            Console.WriteLine($"{_brand} washer uses 1.2 kWh per wash.");
         }
     }
 }

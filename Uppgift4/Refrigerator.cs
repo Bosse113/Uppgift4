@@ -8,17 +8,19 @@ namespace Exercise_4
     {
         public string Brand { get; set; }
         public int Temperature { get; set; }
+        string _brand = Brand;
+        int _temperature = Temperature;
         public void StartCooling()
-        {//ToDo
-
+        {
+            Console.WriteLine($"{_brand} refrigerator starts cooling.");
         }
         public void StopCooling() 
-        {//ToDo
-        
+        {
+            Console.WriteLine($"{_brand} refrigerator stops cooling.");
         }
         public void PrintCoolingEnergy()
-        {//ToDo
-
+        {
+            Console.WriteLine($"{_brand} refrigerator uses 3.6 kWh per day.");
         }
     }
 

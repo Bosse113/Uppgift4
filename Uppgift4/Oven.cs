@@ -8,17 +8,20 @@ namespace Exercise_4
     {
         public string Brand { get; set; }
         public int MaxTemperature { get; set; }
-        public void StartHeating()
-        {//ToDo
+        string _brand=Brand;
+        int _maxTemperature=MaxTemperature;
 
+        public void StartHeating()
+        {
+            Console.WriteLine($"{_brand} oven starts heating.");
         }
         public void StopHeating() 
-        { //ToDo
-        
+        { 
+            Console.WriteLine($"{_brand} oven stops heating.");
         }
         public void PrintHeatingEnergy()
         {//ToDo
-
+            Console.WriteLine($"{_brand} oven uses 2.5 kWh per hour.");
         }
     }
 }
