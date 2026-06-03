@@ -63,7 +63,27 @@ namespace Uppgift4
             {
                 foreach (object device in devices)
                 {
-
+                    if (device is Washer washer)
+                    { // 
+                      // Casta device till Washer // Anropa Washer-metoder }
+                        washer.PrintWashEnergy();
+                        
+                    }
+                    if (device is Refrigerator refrigerator)
+                    {
+                        refrigerator.PrintCoolingEnergy();
+                        
+                    }
+                    if (device is Oven oven)
+                    {
+                        oven.PrintHeatingEnergy();
+                       
+                    }
+                    if (device is RobotVacuum robotVacuum)
+                    {
+                        robotVacuum.PrintCleaningEnergy();
+                        
+                    }
                 }
                 // TODO: 
                 // 1. Kontrollera vilken typ device är. 
