@@ -37,7 +37,7 @@ namespace Uppgift4
         {
             if (IsOn)
             {
-                return energyPerHour * 2; // Som exempel: 2 timmar per dag
+                return energyPerHour;
             }
 
             return 0;

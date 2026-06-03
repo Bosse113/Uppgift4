@@ -30,7 +30,7 @@ namespace Uppgift4
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"RobotVacuum ,{Brand}, has finished and is now off.");
+            Console.WriteLine($"RobotVacuum ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()

@@ -30,7 +30,7 @@ namespace Uppgift4
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"Refrigerator ,{Brand}, has finished and is now off.");
+            Console.WriteLine($"Refrigerator ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()
