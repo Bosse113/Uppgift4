@@ -24,13 +24,13 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"RobotVacuum {Brand} starts vacuuming.");
+            //Console.WriteLine($"RobotVacuum {Brand} starts vacuuming.");
         }
 
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"RobotVacuum ,{Brand}, is now off.");
+            //Console.WriteLine($"RobotVacuum ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()
@@ -59,9 +59,9 @@ namespace Uppgift4
         //    {
         //        Console.WriteLine($"{_brand} robot vacuum stops cleaning.");
         //    }
-        public void PrintCleaningEnergy()
-        {
-            Console.WriteLine($"{Brand} robot vacuum uses {energyPerHour} kWh per cleaning. ");
-        }
+        //public void PrintCleaningEnergy()
+        //{
+        //    Console.WriteLine($"{Brand} robot vacuum uses {energyPerHour} kWh per cleaning. ");
+        //}
     }
 }

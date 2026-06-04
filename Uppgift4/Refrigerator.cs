@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 
 namespace Uppgift4
@@ -8,6 +9,7 @@ namespace Uppgift4
     {
         private double energyPerHour;
         private int Temperature;
+        private string Cname = typeof(Refrigerator).Name;
 
         public Refrigerator(string brand, string room, double energyPerHour, int Temperature)
             : base(brand, room)
@@ -18,19 +20,19 @@ namespace Uppgift4
 
         public override string GetInfo()
         {
-            return $"Refrigerator: {Brand} in {Room}";
+            return $"{Cname} {Brand} in {Room}";
         }
 
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"Refrigerator {Brand} starts cooling.");
+            //Console.WriteLine($"{Cname} {Brand} starts cooling.");
         }
 
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"Refrigerator ,{Brand}, is now off.");
+            //Console.WriteLine($"{Cname} ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()
@@ -57,10 +59,10 @@ namespace Uppgift4
     //    {
     //        Console.WriteLine($"{_brand} refrigerator stops cooling.");
     //    }
-        public void PrintCoolingEnergy()
-        {
-            Console.WriteLine($"{Brand} refrigerator uses {energyPerHour} kWh per day.");
-        }
+        //public void PrintCoolingEnergy()
+        //{
+        //    Console.WriteLine($"{Brand} refrigerator uses {energyPerHour} kWh per day.");
+        //}
     }
 
 }

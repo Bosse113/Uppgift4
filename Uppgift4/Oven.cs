@@ -18,19 +18,19 @@ namespace Uppgift4
 
         public override string GetInfo()
         {
-            return $"Refrigerator: {Brand} in {Room}";
+            return $"Oven: {Brand} in {Room}";
         }
 
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"Oven {Brand} starts cooling.");
+            //Console.WriteLine($"Oven {Brand} starts cooling.");
         }
 
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"Oven ,{Brand}, is now off.");
+            //Console.WriteLine($"Oven ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()
@@ -58,9 +58,9 @@ namespace Uppgift4
     //    { 
     //        Console.WriteLine($"{_brand} oven stops heating.");
     //    }
-        public void PrintHeatingEnergy()
-        {//ToDo
-            Console.WriteLine($"{Brand} oven uses {energyPerHour} kWh per hour.");
-        }
+        //public void PrintHeatingEnergy()
+        //{
+        //    Console.WriteLine($"{Brand} oven uses {energyPerHour} kWh per hour.");
+        //}
     }
 }

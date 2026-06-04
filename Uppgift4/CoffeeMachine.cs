@@ -26,13 +26,13 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"Coffeemachine {Brand} starts a brewing coffee.");
+            //Console.WriteLine($"Coffeemachine {Brand} starts a brewing coffee.");
         }
 
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"Coffeemachine ,{Brand}, is now off.");
+            //Console.WriteLine($"Coffeemachine ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()
@@ -62,10 +62,10 @@ namespace Uppgift4
     //    {
     //        Console.WriteLine($"{_brand} brewer stops brewing.");
     //    }
-        public void PrintBrewingEnergy()
-        {
-            Console.WriteLine($"{Brand} brewer uses {energyPerHour} kWh per brew.");
-        }
+        //public void PrintBrewingEnergy()
+        //{
+        //    Console.WriteLine($"{Brand} brewer uses {energyPerHour} kWh per brew.");
+        //}
 
         }
     }

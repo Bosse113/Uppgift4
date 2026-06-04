@@ -8,38 +8,67 @@ namespace Uppgift4
     {
         static void Main(string[] args)
         {
-            List<Appliance> devices = new List<Appliance>();
+
+            //Flyttad till SmartHomeController
+            //List<Appliance> devices = new List<Appliance>();
             //List<object> devices = new List<object>(); 
-            Washer washer = new Washer("Siemens","kitchen,",1.2, 10);
-            devices.Add(washer);
-            Refrigerator refrigerator = new Refrigerator("Elecrolux","kitchen",3.6, 35);
-            devices.Add(refrigerator);
-            Oven oven = new Oven("Bosch","kitchen",2.5 , 200);
-            devices.Add(oven);
-            RobotVacuum robot = new RobotVacuum("Philips","livingroom" , 0.4, 14);
-            devices.Add(robot);
-            CoffeeMachine coffeeMachine = new CoffeeMachine("MoccaMaster","kitchen" ,0.3,10);
-            devices.Add(coffeeMachine);
+            //Washer washer = new Washer("Siemens","kitchen,",1.2, 10);
+            //devices.Add(washer);
+            //Refrigerator refrigerator = new Refrigerator("Elecrolux","kitchen",3.6, 35);
+            //devices.Add(refrigerator);
+            //Oven oven = new Oven("Bosch","kitchen",2.5 , 200);
+            //devices.Add(oven);
+            //RobotVacuum robot = new RobotVacuum("Philips","livingroom" , 0.4, 14);
+            //devices.Add(robot);
+            //CoffeeMachine coffeeMachine = new CoffeeMachine("MoccaMaster","kitchen" ,0.3,10);
+            //devices.Add(coffeeMachine);
+
+            SmartHomeController controller = new SmartHomeController();
+            // TODO: 
+            // Lägg till minst fem olika apparater.
+            Washer washer = new Washer("Siemens", "kitchen,", 1.2, 10);
+            controller.AddDevice(washer);
+            Refrigerator refrigerator = new Refrigerator("Elecrolux", "kitchen", 3.6, 35);
+            controller.AddDevice(refrigerator);
+            Oven oven = new Oven("Bosch", "kitchen", 2.5, 200);
+            controller.AddDevice(oven);
+            RobotVacuum robot = new RobotVacuum("Philips", "livingroom", 0.4, 14);
+            controller.AddDevice(robot);
+            CoffeeMachine coffeeMachine = new CoffeeMachine("MoccaMaster", "kitchen", 0.3, 10);
+            controller.AddDevice(coffeeMachine);
+            GamingConsole gamingConsole = new GamingConsole("XBOX", "Living room", 0.5, 8);
+            controller.AddDevice(gamingConsole);
+          
+            controller.PrintStatusReport();
+            Console.WriteLine();
+            controller.TurnOnAll();
+            Console.WriteLine(); 
+            double totalEnergy = controller.GetTotalDailyEnergyUsage();
+            Console.WriteLine($"Total daily energy usage: {totalEnergy} kWh");
+            Console.WriteLine();
+            controller.TurnOffAll();
 
             // 
             // Skapa minst fyra objekt: 
             // Washer, Refrigerator, Oven och RobotVacuum. 
             // Lägg till dem i listan devices.
-            RunMorningRoutine(devices);
-            Console.WriteLine();
-            ReportAllEnergy(devices);
 
-            static void RunMorningRoutine(List<Appliance> devices)
-            {
-                foreach (Appliance device in devices)
-                {
-                    string Info=device.GetInfo();
-                    Console.WriteLine(Info);
-                    device.TurnOn();
-                    double Info2 = device.GetDailyEnergyUsage();
-                    Console.WriteLine($"Energy usage is {Info2}");
-                    device.TurnOff();
-                }
+            //Del 5
+            //RunMorningRoutine(devices);
+            //Console.WriteLine();
+            //ReportAllEnergy(devices);
+
+            //static void RunMorningRoutine(List<Appliance> devices)
+            //{
+            //    foreach (Appliance device in devices)
+            //    {
+            //        string Info=device.GetInfo();
+            //        Console.WriteLine(Info);
+            //        device.TurnOn();
+            //        double Info2 = device.GetDailyEnergyUsage();
+            //        Console.WriteLine($"Energy usage is {Info2}");
+            //        device.TurnOff();
+            //    }
                 //foreach (Appliance device in devices)
                 //{
                 //    if (device is Washer washer)
@@ -74,41 +103,42 @@ namespace Uppgift4
                 //    // 3. Anropa rätt startmetod. 
                 //    // 4. Anropa rätt stoppmetod. }
                 //    //
-                //}
+                //
+              
 
 
-            }
-            static void ReportAllEnergy(List<Appliance> devices)
-            {
-                foreach (object device in devices)
-                {
-                    if (device is Washer washer)
-                    { // 
-                      // Casta device till Washer // Anropa Washer-metoder }
-                        washer.PrintWashEnergy();
+        }
+            //static void ReportAllEnergy(List<Appliance> devices)
+            //{
+            //    foreach (object device in devices)
+            //    {
+            //        if (device is Washer washer)
+            //        { // 
+            //          // Casta device till Washer // Anropa Washer-metoder }
+            //            washer.PrintWashEnergy();
                         
-                    }
-                    if (device is Refrigerator refrigerator)
-                    {
-                        refrigerator.PrintCoolingEnergy();
+            //        }
+            //        if (device is Refrigerator refrigerator)
+            //        {
+            //            refrigerator.PrintCoolingEnergy();
                         
-                    }
-                    if (device is Oven oven)
-                    {
-                        oven.PrintHeatingEnergy();
+            //        }
+            //        if (device is Oven oven)
+            //        {
+            //            oven.PrintHeatingEnergy();
                        
-                    }
-                    if (device is RobotVacuum robotVacuum)
-                    {
-                        robotVacuum.PrintCleaningEnergy();
+            //        }
+            //        if (device is RobotVacuum robotVacuum)
+            //        {
+            //            robotVacuum.PrintCleaningEnergy();
 
-                    }
-                    if (device is CoffeeMachine coffeeMachine)
-                    {
-                       coffeeMachine.PrintBrewingEnergy();
+            //        }
+            //        if (device is CoffeeMachine coffeeMachine)
+            //        {
+            //           coffeeMachine.PrintBrewingEnergy();
 
-                    }
-                }
+            //        }
+            //    }
                 // TODO: 
                 // 1. Kontrollera vilken typ device är. 
                 // 2. Casta till rätt typ. 
@@ -136,7 +166,7 @@ namespace Uppgift4
                 //          RobotVacuum.TurnOn()
                 //      3. Vad blev bättre jämfört med List<object>?
                 //          Vi vet typen som läggs in i listan, så säkerheten ökade.
-            }
-        }
+            
     }
+    
 }

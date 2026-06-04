@@ -24,13 +24,13 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"Washer {Brand} starts a washing program.");
+            //Console.WriteLine($"Washer {Brand} starts a washing program.");
         }
 
         public override void TurnOff()
         {
             base.TurnOff();
-            Console.WriteLine($"Washing machine ,{Brand}, is now off.");
+            //Console.WriteLine($"Washing machine ,{Brand}, is now off.");
         }
 
         public override double GetDailyEnergyUsage()
@@ -58,9 +58,9 @@ namespace Uppgift4
     //    { 
     //        Console.WriteLine($"{_brand} washer stops washing.");
     //    }
-        public void PrintWashEnergy()
-        {
-            Console.WriteLine($"{Brand} washer uses {energyPerHour} kWh per wash.");
-        }
+        //public void PrintWashEnergy()
+        //{
+        //    Console.WriteLine($"{Brand} washer uses {energyPerHour} kWh per wash.");
+        //}
     }
 }
