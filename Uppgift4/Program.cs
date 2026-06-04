@@ -128,6 +128,14 @@ namespace Uppgift4
                 //   DÅ får vi ingen rapport på den apparattypen.
 
                 // När jag lade till CoffeeMachine behövde jag ändra på 3 ställen plus den nya klassen
+
+                //******Frågor efter del 5:
+                //      1. Varför fungerar device.TurnOn() trots att device har typen Appliance?
+                //          De olika classerna ärver Appliance och overidar TurnOn.
+                //      2. Vilken metod körs om objektet egentligen är en RobotVacuum?
+                //          RobotVacuum.TurnOn()
+                //      3. Vad blev bättre jämfört med List<object>?
+                //          Vi vet typen som läggs in i listan, så säkerheten ökade.
             }
         }
     }

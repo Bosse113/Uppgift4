@@ -42,7 +42,7 @@ namespace Uppgift4
 
             return 0;
         }
-    
+
     //internal class Refrigerator(string Brand,int Temperature)
     //{
     //    public string? Brand { get; set; }
