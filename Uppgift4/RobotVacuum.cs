@@ -24,7 +24,7 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"{Brand} RobotVacuum starts vacuuming.");
+            Console.WriteLine($"RobotVacuum {Brand} starts vacuuming.");
         }
 
         public override void TurnOff()

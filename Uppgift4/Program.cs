@@ -8,7 +8,8 @@ namespace Uppgift4
     {
         static void Main(string[] args)
         {
-            List<object> devices = new List<object>(); 
+            List<Appliance> devices = new List<Appliance>();
+            //List<object> devices = new List<object>(); 
             Washer washer = new Washer("Siemens","kitchen,",1.2, 10);
             devices.Add(washer);
             Refrigerator refrigerator = new Refrigerator("Elecrolux","kitchen",3.6, 35);
@@ -28,47 +29,56 @@ namespace Uppgift4
             Console.WriteLine();
             ReportAllEnergy(devices);
 
-            static void RunMorningRoutine(List<object> devices)
+            static void RunMorningRoutine(List<Appliance> devices)
             {
-                foreach (object device in devices)
+                foreach (Appliance device in devices)
                 {
-                    if (device is Washer washer)
-                    { // 
-                      // Casta device till Washer // Anropa Washer-metoder }
-                        washer.TurnOn();
-                        washer.TurnOff();
-                    }
-                    if (device is Refrigerator refrigerator)
-                    { 
-                       refrigerator.TurnOn();
-                       refrigerator.TurnOff();
-                    }
-                    if (device is Oven oven)
-                    { 
-                        oven.TurnOn();
-                        oven.TurnOff();
-                    }
-                    if (device is RobotVacuum robotVacuum)
-                    { 
-                        robotVacuum.TurnOn();
-                        robotVacuum.TurnOff();
-                    }
-                    if (device is CoffeeMachine coffeeMachine)
-                    {
-                        coffeeMachine.TurnOn();
-                        coffeeMachine.TurnOff();
-                    }
-                    // 
-                    // 1. Kontrollera vilken typ device är. 
-                    // 2. Casta till rätt typ. 
-                    // 3. Anropa rätt startmetod. 
-                    // 4. Anropa rätt stoppmetod. }
-                    //
+                    string Info=device.GetInfo();
+                    Console.WriteLine(Info);
+                    device.TurnOn();
+                    double Info2 = device.GetDailyEnergyUsage();
+                    Console.WriteLine($"Energy usage is {Info2}");
+                    device.TurnOff();
                 }
-                
+                //foreach (Appliance device in devices)
+                //{
+                //    if (device is Washer washer)
+                //    { // 
+                //      // Casta device till Washer // Anropa Washer-metoder }
+                //        washer.TurnOn();
+                //        washer.TurnOff();
+                //    }
+                //    if (device is Refrigerator refrigerator)
+                //    { 
+                //       refrigerator.TurnOn();
+                //       refrigerator.TurnOff();
+                //    }
+                //    if (device is Oven oven)
+                //    { 
+                //        oven.TurnOn();
+                //        oven.TurnOff();
+                //    }
+                //    if (device is RobotVacuum robotVacuum)
+                //    { 
+                //        robotVacuum.TurnOn();
+                //        robotVacuum.TurnOff();
+                //    }
+                //    if (device is CoffeeMachine coffeeMachine)
+                //    {
+                //        coffeeMachine.TurnOn();
+                //        coffeeMachine.TurnOff();
+                //    }
+                //    // 
+                //    // 1. Kontrollera vilken typ device är. 
+                //    // 2. Casta till rätt typ. 
+                //    // 3. Anropa rätt startmetod. 
+                //    // 4. Anropa rätt stoppmetod. }
+                //    //
+                //}
+
 
             }
-            static void ReportAllEnergy(List<object> devices)
+            static void ReportAllEnergy(List<Appliance> devices)
             {
                 foreach (object device in devices)
                 {

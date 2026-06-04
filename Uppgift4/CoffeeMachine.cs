@@ -26,7 +26,7 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"{Brand} coffeemachine starts a brewing coffee.");
+            Console.WriteLine($"Coffeemachine {Brand} starts a brewing coffee.");
         }
 
         public override void TurnOff()

@@ -24,7 +24,7 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"{Brand} Refrigerator starts cooling.");
+            Console.WriteLine($"Refrigerator {Brand} starts cooling.");
         }
 
         public override void TurnOff()

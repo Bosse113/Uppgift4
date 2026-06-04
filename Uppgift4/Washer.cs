@@ -24,7 +24,7 @@ namespace Uppgift4
         public override void TurnOn()
         {
             base.TurnOn();
-            Console.WriteLine($"{Brand} washer starts a washing program.");
+            Console.WriteLine($"Washer {Brand} starts a washing program.");
         }
 
         public override void TurnOff()
