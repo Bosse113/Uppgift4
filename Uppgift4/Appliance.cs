@@ -57,4 +57,12 @@ namespace Uppgift4
             //
         }
         }
+    // ***** frågor Del 10
+    //Test A
+    //Försök köra programmet. Vad säger kompilatorn i dina child classes där du använder override?
+    //Svara som kommentar. Ångra sedan ändringen så att metoden är virtual igen.
+    // 'CoffeeMachine.TurnOn()': cannot override inherited member 'Appliance.TurnOn()' because it is not marked virtual, abstract, or override
+    //
+    //Test B
+    //  Den säger att metoden från Appliance döljs av metoden i Washer. Men det beter sig som förväntat. Inget felmeddelande.
 }
