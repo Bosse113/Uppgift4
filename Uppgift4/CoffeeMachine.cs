@@ -49,7 +49,7 @@ namespace Uppgift4
         public void Schedule(DateTime time)
         {
             NextRun = time;
-            Console.WriteLine($"Coffemachine is scheduled for {NextRun}");
+            Console.WriteLine($"Coffemachine {Brand} is scheduled for {NextRun}");
         }
         //internal class CoffeeMachine(string Brand,int CupsPerBrew)
         //{

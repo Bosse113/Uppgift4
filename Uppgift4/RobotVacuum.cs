@@ -49,7 +49,7 @@ namespace Uppgift4
         public void Schedule(DateTime time)
         {
             NextRun = time;
-            Console.WriteLine($"Robotvacuum is scheduled for {NextRun}");
+            Console.WriteLine($"Robotvacuum {Brand} is scheduled for {NextRun}");
         }
 
         //internal class RobotVacuum(string Brand,int BatteryLevel)

@@ -46,7 +46,7 @@ namespace Uppgift4
         public void Schedule(DateTime time)
         {
             NextRun = time;
-            Console.WriteLine($"Washer is scheduled for {NextRun}");
+            Console.WriteLine($"Washer {Brand} is scheduled for {NextRun}");
         }
         //internal class Washer(string Brand,int CapacityKg)
         //{
