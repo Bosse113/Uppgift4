@@ -9,7 +9,7 @@ namespace Uppgift4
     {
         private double energyPerHour;
         private int Temperature;
-        private string Cname = typeof(Refrigerator).Name;
+        
 
         public Refrigerator(string brand, string room, double energyPerHour, int Temperature)
             : base(brand, room)
@@ -20,7 +20,7 @@ namespace Uppgift4
 
         public override string GetInfo()
         {
-            return $"{Cname} {Brand} in {Room}";
+            return $"Refrigerator {Brand} in {Room}";
         }
 
         public override void TurnOn()

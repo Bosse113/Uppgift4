@@ -16,7 +16,6 @@ namespace Uppgift4
         public string? Brand { get; }
         public string? Room { get; }
         public bool IsOn { get; protected set; }
-        private string Cname = typeof(devices).Name;//ToDo: hitta ett sätt att få child-namnet
         
         public Appliance(string brand, string room)
         {
@@ -38,7 +37,7 @@ namespace Uppgift4
             // Sätt IsOn till true. 
             // Skriv ut ett generellt startmeddelande.
             IsOn = true;
-            Console.WriteLine($"{Cname} {Brand} is now turned on.");
+            Console.WriteLine($"{Brand} is now turned on.");
            
         } 
         public virtual void TurnOff() {

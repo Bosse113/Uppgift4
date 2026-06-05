@@ -47,6 +47,8 @@ namespace Uppgift4
             Console.WriteLine($"Total daily energy usage: {totalEnergy} kWh");
             Console.WriteLine();
             controller.TurnOffAll();
+            Console.WriteLine();
+            controller.ScheduleAllSchedulableDevices(DateTime.Now.AddHours(2));//TEst av schedule
 
             // 
             // Skapa minst fyra objekt: 
@@ -69,42 +71,42 @@ namespace Uppgift4
             //        Console.WriteLine($"Energy usage is {Info2}");
             //        device.TurnOff();
             //    }
-                //foreach (Appliance device in devices)
-                //{
-                //    if (device is Washer washer)
-                //    { // 
-                //      // Casta device till Washer // Anropa Washer-metoder }
-                //        washer.TurnOn();
-                //        washer.TurnOff();
-                //    }
-                //    if (device is Refrigerator refrigerator)
-                //    { 
-                //       refrigerator.TurnOn();
-                //       refrigerator.TurnOff();
-                //    }
-                //    if (device is Oven oven)
-                //    { 
-                //        oven.TurnOn();
-                //        oven.TurnOff();
-                //    }
-                //    if (device is RobotVacuum robotVacuum)
-                //    { 
-                //        robotVacuum.TurnOn();
-                //        robotVacuum.TurnOff();
-                //    }
-                //    if (device is CoffeeMachine coffeeMachine)
-                //    {
-                //        coffeeMachine.TurnOn();
-                //        coffeeMachine.TurnOff();
-                //    }
-                //    // 
-                //    // 1. Kontrollera vilken typ device är. 
-                //    // 2. Casta till rätt typ. 
-                //    // 3. Anropa rätt startmetod. 
-                //    // 4. Anropa rätt stoppmetod. }
-                //    //
-                //
-              
+            //foreach (Appliance device in devices)
+            //{
+            //    if (device is Washer washer)
+            //    { // 
+            //      // Casta device till Washer // Anropa Washer-metoder }
+            //        washer.TurnOn();
+            //        washer.TurnOff();
+            //    }
+            //    if (device is Refrigerator refrigerator)
+            //    { 
+            //       refrigerator.TurnOn();
+            //       refrigerator.TurnOff();
+            //    }
+            //    if (device is Oven oven)
+            //    { 
+            //        oven.TurnOn();
+            //        oven.TurnOff();
+            //    }
+            //    if (device is RobotVacuum robotVacuum)
+            //    { 
+            //        robotVacuum.TurnOn();
+            //        robotVacuum.TurnOff();
+            //    }
+            //    if (device is CoffeeMachine coffeeMachine)
+            //    {
+            //        coffeeMachine.TurnOn();
+            //        coffeeMachine.TurnOff();
+            //    }
+            //    // 
+            //    // 1. Kontrollera vilken typ device är. 
+            //    // 2. Casta till rätt typ. 
+            //    // 3. Anropa rätt startmetod. 
+            //    // 4. Anropa rätt stoppmetod. }
+            //    //
+            //
+
 
 
         }

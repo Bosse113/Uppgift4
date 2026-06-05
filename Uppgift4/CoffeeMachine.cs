@@ -6,10 +6,11 @@ using System.Text;
 
 namespace Uppgift4
 {
-    internal class CoffeeMachine : Appliance
+    internal class CoffeeMachine : Appliance, ISchedulable
     {
         private double energyPerHour;
         private int CupsPerBrew;
+        public DateTime NextRun { get; set; }
 
         public CoffeeMachine(string brand, string room, double energyPerHour, int CupsPerBrew)
             : base(brand, room)
@@ -44,28 +45,32 @@ namespace Uppgift4
 
             return 0;
         }
-    
 
-    //internal class CoffeeMachine(string Brand,int CupsPerBrew)
-    //{
-    //    public string? Brand { get; set; }
-    //    public int CupsPerBrew { get; set; }
+        public void Schedule(DateTime time)
+        {
+            NextRun = time;
+            Console.WriteLine($"Coffemachine is scheduled for {NextRun}");
+        }
+        //internal class CoffeeMachine(string Brand,int CupsPerBrew)
+        //{
+        //    public string? Brand { get; set; }
+        //    public int CupsPerBrew { get; set; }
 
-    //    string _brand = Brand;
-    //    int _cupsPerBrew = CupsPerBrew;
+        //    string _brand = Brand;
+        //    int _cupsPerBrew = CupsPerBrew;
 
-    //    public void StartBrewing()
-    //    {
-    //        Console.WriteLine($"{_brand} brewer starts brewing.");
-    //    }
-    //    public void StopBrewing()
-    //    {
-    //        Console.WriteLine($"{_brand} brewer stops brewing.");
-    //    }
+        //    public void StartBrewing()
+        //    {
+        //        Console.WriteLine($"{_brand} brewer starts brewing.");
+        //    }
+        //    public void StopBrewing()
+        //    {
+        //        Console.WriteLine($"{_brand} brewer stops brewing.");
+        //    }
         //public void PrintBrewingEnergy()
         //{
         //    Console.WriteLine($"{Brand} brewer uses {energyPerHour} kWh per brew.");
         //}
 
-        }
+    }
     }

@@ -4,16 +4,19 @@ using System.Text;
 
 namespace Uppgift4
 {
-    internal class RobotVacuum : Appliance
+    internal class RobotVacuum : Appliance, ISchedulable
     {
         private double energyPerHour;
         private int BatteryLevel;
+        public DateTime NextRun { get; set; }
 
         public RobotVacuum(string brand, string room, double energyPerHour, int BatteryLevel)
             : base(brand, room)
         {
             this.energyPerHour = energyPerHour;
             this.BatteryLevel = BatteryLevel;
+            
+
         }
 
         public override string GetInfo()
@@ -41,6 +44,12 @@ namespace Uppgift4
             }
 
             return 0;
+        }
+
+        public void Schedule(DateTime time)
+        {
+            NextRun = time;
+            Console.WriteLine($"Robotvacuum is scheduled for {NextRun}");
         }
 
         //internal class RobotVacuum(string Brand,int BatteryLevel)

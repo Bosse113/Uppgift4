@@ -4,10 +4,11 @@ using System.Text;
 
 namespace Uppgift4
 {
-    internal class Washer : Appliance
+    internal class Washer : Appliance, ISchedulable
     {
         private double energyPerHour;
         private int CapacityKg;
+        public DateTime NextRun { get; set; }
 
         public Washer(string brand, string room, double energyPerHour,int CapacityKg)
             : base(brand, room)
@@ -42,22 +43,26 @@ namespace Uppgift4
 
             return 0;
         }
-    
-    //internal class Washer(string Brand,int CapacityKg)
-    //{
-    //    public string? Brand { get; set; }
-    //    public int CapacityKg { get; set; }
-    //    string _brand=Brand;
-    //    int _capacityKg=CapacityKg;
+        public void Schedule(DateTime time)
+        {
+            NextRun = time;
+            Console.WriteLine($"Washer is scheduled for {NextRun}");
+        }
+        //internal class Washer(string Brand,int CapacityKg)
+        //{
+        //    public string? Brand { get; set; }
+        //    public int CapacityKg { get; set; }
+        //    string _brand=Brand;
+        //    int _capacityKg=CapacityKg;
 
-    //    public void StartWash()
-    //    {
-    //        Console.WriteLine($"{_brand} washer starts washing.");
-    //    }
-    //    public void StopWash() 
-    //    { 
-    //        Console.WriteLine($"{_brand} washer stops washing.");
-    //    }
+        //    public void StartWash()
+        //    {
+        //        Console.WriteLine($"{_brand} washer starts washing.");
+        //    }
+        //    public void StopWash() 
+        //    { 
+        //        Console.WriteLine($"{_brand} washer stops washing.");
+        //    }
         //public void PrintWashEnergy()
         //{
         //    Console.WriteLine($"{Brand} washer uses {energyPerHour} kWh per wash.");
