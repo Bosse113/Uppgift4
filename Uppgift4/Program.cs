@@ -38,7 +38,8 @@ namespace Uppgift4
             controller.AddDevice(coffeeMachine);
             GamingConsole gamingConsole = new GamingConsole("XBOX", "Living room", 0.5, 8);
             controller.AddDevice(gamingConsole);
-          
+           
+
             controller.PrintStatusReport();
             Console.WriteLine();
             controller.TurnOnAll();
@@ -50,6 +51,10 @@ namespace Uppgift4
             Console.WriteLine();
             controller.ScheduleAllSchedulableDevices(DateTime.Now.AddHours(2));//TEst av schedule
 
+            SmartLamp lamp1 = new SmartLamp("IKEA", "Hallway", 80);
+            Appliance lamp2 = lamp1;
+            lamp1.TurnOn();
+            lamp2.TurnOn();
             // 
             // Skapa minst fyra objekt: 
             // Washer, Refrigerator, Oven och RobotVacuum. 

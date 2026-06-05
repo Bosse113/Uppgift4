@@ -22,7 +22,7 @@ namespace Uppgift4
             return $"Washing machine: {Brand} in {Room}";
         }
 
-        public void TurnOn()
+        public override void TurnOn()
         {
             base.TurnOn();
             //Console.WriteLine($"Washer {Brand} starts a washing program.");
