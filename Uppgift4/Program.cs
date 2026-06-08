@@ -9,7 +9,7 @@ namespace Uppgift4
         static void Main(string[] args)
         {
 
-            //Flyttad till SmartHomeController
+            //Flyttad till SmartHomeController 
             //List<Appliance> devices = new List<Appliance>();
             //List<object> devices = new List<object>(); 
             //Washer washer = new Washer("Siemens","kitchen,",1.2, 10);
