@@ -7,13 +7,17 @@ namespace Uppgift4
     internal class Oven : Appliance
     {
         private double energyPerHour;
-        private int CupsPerBrew;
+        private int MaxTemperature;
 
-        public Oven(string brand, string room, double energyPerHour, int CupsPerBrew)
+        public Oven(string brand, string room, double energyPerHour, int MaxTemperature)
             : base(brand, room)
         {
             this.energyPerHour = energyPerHour;
-            this.CupsPerBrew = CupsPerBrew;
+            this.MaxTemperature = MaxTemperature;
+        }
+
+        public Oven(string brand, string room, int maxTemperature) : base(brand, room)
+        {
         }
 
         public override string GetInfo()
@@ -21,13 +25,13 @@ namespace Uppgift4
             return $"Oven: {Brand} in {Room}";
         }
 
-        public override void TurnOn()
+        public sealed override void TurnOn()
         {
             base.TurnOn();
             //Console.WriteLine($"Oven {Brand} starts cooling.");
         }
 
-        public override void TurnOff()
+        public sealed override void TurnOff()
         {
             base.TurnOff();
             //Console.WriteLine($"Oven ,{Brand}, is now off.");
